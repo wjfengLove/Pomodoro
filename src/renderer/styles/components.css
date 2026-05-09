@@ -1,0 +1,173 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 24px 20px;
+}
+
+/* Session Indicator */
+.session-indicator {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.session-indicator .phase {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.session-indicator.break .phase {
+  color: var(--accent-break);
+}
+
+/* Timer Display */
+.timer-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0 24px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__bg {
+  fill: none;
+  stroke: var(--ring-bg);
+}
+
+.progress-ring__fill {
+  fill: none;
+  stroke: var(--ring-work);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.progress-ring__fill.break {
+  stroke: var(--ring-break);
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 56px;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+  color: var(--text-primary);
+  background: #333;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.bottom-bar .pomodoro-count {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.icon-btn {
+  background: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+}
+
+.icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.icon-btn.active {
+  color: var(--accent);
+}
+
+/* Settings Panel */
+.settings-panel {
+  display: none;
+  background: var(--bg-secondary);
+  border: 1px solid #333;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.settings-panel.visible {
+  display: block;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.settings-row:last-child {
+  margin-bottom: 0;
+}
+
+.settings-row label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.settings-row .unit {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-left: 6px;
+}

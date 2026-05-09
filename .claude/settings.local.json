@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p dist/renderer/styles)",
+      "Bash(cp src/renderer/index.html dist/renderer/)",
+      "Bash(cp src/renderer/styles/*.css dist/renderer/styles/)",
+      "Bash(npx electron *)",
+      "Bash(npx tsc *)",
+      "Bash(npx esbuild *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
